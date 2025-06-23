@@ -1,0 +1,351 @@
+/* --- ESTILOS GENERALES --- */
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: rgb(4, 4, 10);
+  background-attachment: fixed;
+  background-position: center;
+  color: #ffffff;
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+/* --- HEADER --- */
+header {
+  background-image: url('WhatsApp Image 2025-06-03 at 11.50.46.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 250, 250);
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+header .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* --- NAVEGACIÓN --- */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  flex-wrap: wrap; /* Para que en móviles los enlaces bajen de línea */
+  gap: 5px;
+}
+
+nav a {
+  color: #fff6f6;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  background-color: #444;
+}
+
+/* --- SECCIONES --- */
+.seccion {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 30px 15px;
+  margin: 30px auto;
+  background-color: rgba(56, 60, 66, 0.8);
+  width: 90%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.seccion h2 {
+  color: #ffffff;
+}
+
+.seccion.activa {
+  display: block;
+  opacity: 1;
+}
+
+/* --- JUEGOS --- */
+.juego {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 30px auto;
+  width: 95%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: rgb(63, 67, 75);
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  padding-bottom: 56.25%; /* Relación 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container .thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.thumbnail {
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.thumbnail::after {
+  content: '▶';
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 0 10px black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.juego button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.juego button:hover {
+  background-color: #0056b3;
+}
+
+/* --- RESPUESTAS --- */
+.respuesta {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.respuesta small {
+  font-size: 0.85em;
+  color: #555;
+}
+
+/* --- PERFILES --- */
+.perfil {
+  margin: 10px auto;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #44484d;
+  background-color: rgba(116, 110, 110, 0.8);
+  cursor: pointer;
+  max-width: 500px;
+  transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.perfil:hover {
+  transform: scale(1.02);
+  background-color: #4b6783;
+}
+
+/* --- FOOTER --- */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-top: 60px;
+}
+
+/* --- CASOS --- */
+.caso {
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: justify;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.caso p, .caso h3 {
+  text-align: justify;
+}
+
+.img-izquierda {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  width: 40%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.caso h3 {
+  margin-top: 0;
+}
+
+.caso a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.caso a:hover {
+  text-decoration: underline;
+}
+
+/* --- CARRUSEL --- */
+.carrusel {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  margin: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.slides {
+  display: flex;
+  width: calc(100% * 18);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slide 72s infinite linear;
+}
+
+.slides > * {
+  width: calc(100% / 18);
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes slide {
+  0%    { transform: translateX(0%); }
+  5%    { transform: translateX(0%); }
+  5.56% { transform: translateX(-5.55%); }
+  10.56% { transform: translateX(-5.55%); }
+
+  11.11% { transform: translateX(-11.1%); }
+  16.11% { transform: translateX(-11.1%); }
+  16.67% { transform: translateX(-16.65%); }
+  21.67% { transform: translateX(-16.65%); }
+
+  22.22% { transform: translateX(-22.2%); }
+  27.22% { transform: translateX(-22.2%); }
+  27.78% { transform: translateX(-27.75%); }
+  32.78% { transform: translateX(-27.75%); }
+
+  33.33% { transform: translateX(-33.3%); }
+  38.33% { transform: translateX(-33.3%); }
+  38.89% { transform: translateX(-38.85%); }
+  43.89% { transform: translateX(-38.85%); }
+
+  44.44% { transform: translateX(-44.4%); }
+  49.44% { transform: translateX(-44.4%); }
+  49.99% { transform: translateX(-49.95%); }
+  54.99% { transform: translateX(-49.95%); }
+
+  55.55% { transform: translateX(-55.5%); }
+  60.55% { transform: translateX(-55.5%); }
+  61.11% { transform: translateX(-61.05%); }
+  66.11% { transform: translateX(-61.05%); }
+
+  66.66% { transform: translateX(-66.6%); }
+  71.66% { transform: translateX(-66.6%); }
+}
+
+video {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+  /* Navegación vertical con links más grandes */
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  /* Secciones ocupan casi todo el ancho */
+  .seccion {
+    width: 95%;
+    padding: 20px 10px;
+    margin: 20px auto;
+  }
+
+  /* Juegos y perfiles más anchos y centrados */
+  .juego, .perfil {
+    width: 95%;
+    max-width: none;
+  }
+
+  /* Caso: imagen a 100% ancho arriba y texto abajo */
+  .img-izquierda {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 90%;
+    max-width: none;
+  }
+
+  /* Carrusel adapta tamaño */
+  .carrusel {
+    max-width: 100%;
+    padding-bottom: 56.25%; /* Mantener proporción */
+    border-radius: 0;
+  }
+
+  .slides {
+    width: calc(100% * 18);
+  }
+
+  .slides img,
+  .slides iframe,
+  .slides .canva-embed {
+    object-fit: contain; /* evitar que se recorten en móvil */
+  }
+}
+
+/* --- CONTENEDOR CANVA/IFRAME ADICIONAL PARA RESPONSIVE --- */
+.canva-container, iframe {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
